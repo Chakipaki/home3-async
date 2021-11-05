@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="main" data-main>
+        <header class="main__header">
+            <h1 class="header__logo">blog</h1>
+            <div class="header__rightSide">
+                <form action="sort" class="rightSide__sort">
+                    <select data-sorting size="1" class="sort__section">
+                        <option data-sorting-def selected value="sort">sort</option>
+                        <option data-sorting-AtZ value="A__to__Z">A to Z</option>
+                        <option data-sorting-ZtA value="Z__to__A">Z to A</option>
+                    </select>
+                </form>
+                <input data-filter type="text" name="filter" class="rightSide__filter" placeholder="filter">
+            </div>
+        </header>
+        <section class="main__blog" data-blog>
+        </section>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>

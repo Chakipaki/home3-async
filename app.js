@@ -49,18 +49,21 @@ function createPostsList(posts) {
 }
 // Delete post
 function addDeleteSupport() {
+    const deleteMessege = document.createElement('div');
     document.addEventListener('click', (e) => {
-        const deleteMessege = document.createElement('div');
         if (e.target.classList[0] === 'delete__button') {
-            deleteMessege.innerText = `Post: ${e.target.attributes[0].value} deleted`;
-            deleteMessege.classList.add('post__delete__outText');
-            document.body.appendChild(deleteMessege);
-            blog.removeChild(e.target.parentElement.parentElement);
+            blog.removeChild(e.target.closest('article'));
+            presentMessege(e);
         }
         setTimeout(() => {
             document.body.removeChild(deleteMessege);
         }, 500);
     });
+    function presentMessege(el) {
+        deleteMessege.innerText = `Post: ${el.target.attributes[0].value} deleted`;
+        deleteMessege.classList.add('post__delete__outText');
+        document.body.appendChild(deleteMessege);
+    }
 }
 // Filtering
 function filter() {
